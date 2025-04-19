@@ -1,23 +1,23 @@
-# Automatic Ripping Machine (ARM)
-[![CI](https://github.com/automatic-ripping-machine/automatic-ripping-machine/actions/workflows/main.yml/badge.svg)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/actions/workflows/main.yml) [![Publish Docker Image](https://github.com/automatic-ripping-machine/automatic-ripping-machine/actions/workflows/publish-image.yml/badge.svg)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/actions/workflows/publish-image.yml)
+# Jellyfin Ripping Machine (JRM)
+[![CI](https://github.com/sebandblocks/jelly-ripping-machine/actions/workflows/main.yml/badge.svg)](https://github.com/sebandblocks/jelly-ripping-machine/actions/workflows/main.yml) [![Publish Docker Image](https://github.com/sebandblocks/jelly-ripping-machine/actions/workflows/publish-image.yml/badge.svg)](https://github.com/sebandblocks/jelly-ripping-machine/actions/workflows/publish-image.yml)
 [![Docker](https://img.shields.io/docker/pulls/automaticrippingmachine/automatic-ripping-machine.svg)](https://hub.docker.com/r/automaticrippingmachine/automatic-ripping-machine)
 
-[![GitHub forks](https://img.shields.io/github/forks/automatic-ripping-machine/automatic-ripping-machine)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/network)
-[![GitHub stars](https://img.shields.io/github/stars/automatic-ripping-machine/automatic-ripping-machine)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/automatic-ripping-machine/automatic-ripping-machine)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/automatic-ripping-machine/automatic-ripping-machine)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/automatic-ripping-machine/automatic-ripping-machine)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/automatic-ripping-machine/automatic-ripping-machine?)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/commits/v2_devel)
+[![GitHub forks](https://img.shields.io/github/forks/sebandblocks/jelly-ripping-machine)](https://github.com/sebandblocks/jelly-ripping-machine/network)
+[![GitHub stars](https://img.shields.io/github/stars/sebandblocks/jelly-ripping-machine)](https://github.com/sebandblocks/jelly-ripping-machine/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/sebandblocks/jelly-ripping-machine)](https://github.com/sebandblocks/jelly-ripping-machine/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/sebandblocks/jelly-ripping-machine)](https://github.com/sebandblocks/jelly-ripping-machine/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/sebandblocks/jelly-ripping-machine)](https://github.com/sebandblocks/jelly-ripping-machine/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/sebandblocks/jelly-ripping-machine?)](https://github.com/sebandblocks/jelly-ripping-machine/commits/v2_devel)
 
-[![GitHub license](https://img.shields.io/github/license/automatic-ripping-machine/automatic-ripping-machine)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/blob/v2_devel/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/sebandblocks/jelly-ripping-machine)](https://github.com/sebandblocks/jelly-ripping-machine/blob/v2_devel/LICENSE)
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/automatic-ripping-machine/automatic-ripping-machine?label=Latest%20Stable%20Version)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/releases)
-[![GitHub release Date](https://img.shields.io/github/release-date/automatic-ripping-machine/automatic-ripping-machine?label=Latest%20Stable%20Released)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/sebandblocks/jelly-ripping-machine?label=Latest%20Stable%20Version)](https://github.com/sebandblocks/jelly-ripping-machine/releases)
+[![GitHub release Date](https://img.shields.io/github/release-date/sebandblocks/jelly-ripping-machine?label=Latest%20Stable%20Released)](https://github.com/sebandblocks/jelly-ripping-machine/releases)
 ![Python Versions](https://img.shields.io/badge/Python_Versions-3.9_|_3.10_|_3.11_|_3.12-blue?logo=python)
 
 
 
-[![Wiki](https://img.shields.io/badge/Wiki-Get%20Help-brightgreen)](https://github.com/automatic-ripping-machine/automatic-ripping-machine/wiki)
+[![Wiki](https://img.shields.io/badge/Wiki-Get%20Help-brightgreen)](https://github.com/sebandblocks/jelly-ripping-machine/wiki)
 [![Discord](https://img.shields.io/discord/576479573886107699)](https://discord.gg/FUSrn8jUcR)
 
 
@@ -26,7 +26,7 @@
 
 Insert an optical disc (Blu-ray, DVD, CD) and checks to see if it's audio, video (Movie or TV), or data, then rips it.
 
-See: https://b3n.org/automatic-ripping-machine
+See: ~~https://b3n.org/automatic-ripping-machine~~ - ARM Website.
 
 
 ## Features
@@ -34,7 +34,7 @@ See: https://b3n.org/automatic-ripping-machine
 - Detects insertion of disc using udev
 - Determines disc type...
   - If video (Blu-ray or DVD)
-    - Retrieve title from disc or [OMDb API](http://www.omdbapi.com/) to name the folder "Movie Title (Year)" so that Plex or Emby can pick it up
+    - Retrieve title from disc or [OMDb API](http://www.omdbapi.com/) to name the folder "Movie Title [imdbid-(id)]" so that Jellyfin can pick it up and get the metadata instantly.
     - Determine if video is Movie or TV using [OMDb API](http://www.omdbapi.com/)
     - Rip using MakeMKV or HandBrake (can rip all features or main feature)
     - Eject disc and queue up Handbrake transcoding when done
@@ -64,18 +64,18 @@ See: https://b3n.org/automatic-ripping-machine
 
 ## Install
 
-[For normal installation please see the wiki](https://github.com/automatic-ripping-machine/automatic-ripping-machine/wiki/).
+[For normal installation please see the wiki](https://github.com/sebandblocks/jelly-ripping-machine/wiki/).
 
-[For docker installation please see here](https://github.com/automatic-ripping-machine/automatic-ripping-machine/wiki/docker).
+[For docker installation please see here](https://github.com/sebandblocks/jelly-ripping-machine/wiki/docker).
 
 ## Troubleshooting
- [Please see the wiki for troubleshooting](https://github.com/automatic-ripping-machine/automatic-ripping-machine/wiki/).
+ [Please see the wiki for troubleshooting](https://github.com/sebandblocks/jelly-ripping-machine/wiki/).
 
 ## Contributing
 
-Pull requests are welcome.  Please see the [Contributing Guide](https://github.com/automatic-ripping-machine/automatic-ripping-machine/wiki/Contributing-Guide)
+Pull requests are welcome.  Please see the [Contributing Guide](https://github.com/sebandblocks/jelly-ripping-machine/wiki/Contributing-Guide)
 
-If you set ARM up in a different environment (hardware/OS/virtual/etc.), please consider [submitting a howto to the wiki](https://github.com/automatic-ripping-machine/automatic-ripping-machine/wiki).
+If you set ARM up in a different environment (hardware/OS/virtual/etc.), please consider [submitting a howto to the wiki](https://github.com/sebandblocks/jelly-ripping-machine/wiki).
 
 ## License
 
